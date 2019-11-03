@@ -7,6 +7,7 @@ import dns.resolver
 def email_verificator(email):
     fromAddress = 'ebbryl.tyut@gmail.com'
     regex = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$'
+    # regex = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
     try:
 
         # Email address to verify
