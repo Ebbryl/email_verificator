@@ -8,21 +8,22 @@ def email_verificator(email):
     fromAddress = 'ebbryl.tyut@gmail.com'
     regex = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$'
     # regex = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+
+    # Email address to verify
+    # inputAddress = input('Please enter the emailAddress to verify:')
+    inputAddress = email
+    addressToVerify = (str(inputAddress)).lower()
+
+    #validator
+    check = True
+    temp2 = 'nil'
+
+    # Syntax check
+    match = re.match(regex, addressToVerify)
+    if match == None:
+        check = False
+        temp2 = "Bad format"
     try:
-
-        # Email address to verify
-        # inputAddress = input('Please enter the emailAddress to verify:')
-        inputAddress = email
-        addressToVerify = str(inputAddress)
-
-        #validator
-        check = True
-        temp2 = ''
-
-        # Syntax check
-        match = re.match(regex, addressToVerify)
-        if match == None:
-            check = False
 
         if check == True:
             splitAddress = addressToVerify.split('@')
@@ -45,11 +46,10 @@ def email_verificator(email):
 
             # Assume SMTP response 250 is success
             if code == 250:
-                temp2 = "Success"
+                temp2 = "Good Conn."
 
             else:
-                temp2 = "Failed"
+                temp2 = "Bad Conn."
     except:
         print("error")
-        temp2 = ""
     return temp2
