@@ -12,7 +12,7 @@ def email_verificator(email):
     # Email address to verify
     # inputAddress = input('Please enter the emailAddress to verify:')
     inputAddress = email
-    addressToVerify = (str(inputAddress)).lower()
+    addressToVerify = (str(inputAddress)).lower().strip()
 
     #validator
     check = True
