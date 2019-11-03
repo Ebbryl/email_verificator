@@ -26,7 +26,7 @@ def email_verificator(email):
     match = re.match(regex, addressToVerify)
     if match == None:
         check = False
-        temp2 = "Bad format"
+        temp2 = "Not Valid"
     try:
 
         if check == True:
@@ -50,7 +50,7 @@ def email_verificator(email):
 
             # Assume SMTP response 250 is success
             if code == 250:
-                temp2 = "Good Conn."
+                temp2 = "Valid"
 
             else:
                 temp2 = "Bad Conn."
