@@ -14,6 +14,10 @@ def email_verificator(email):
     inputAddress = email
     addressToVerify = (str(inputAddress)).lower().strip()
 
+    #get domain
+    splitAddress = addressToVerify.split('@')
+    domain = str(splitAddress[1])
+
     #validator
     check = True
     temp2 = 'nil'
@@ -52,4 +56,4 @@ def email_verificator(email):
                 temp2 = "Bad Conn."
     except:
         print("error")
-    return temp2
+    return temp2, domain
