@@ -20,15 +20,15 @@ def email_verificator(email):
 
     #validator
     check = True
-    temp2 = 'nil'
+    temp2 = ''
 
-    # Syntax check
-    match = re.match(regex, addressToVerify)
-    if match == None:
-        check = False
-        temp2 = "Not Valid"
     try:
-
+        # Syntax check
+        match = re.match(regex, addressToVerify)
+        if match == None:
+            check = False
+            temp2 = "Not Valid"
+    
         if check == True:
             splitAddress = addressToVerify.split('@')
             domain = str(splitAddress[1])
@@ -55,5 +55,6 @@ def email_verificator(email):
             else:
                 temp2 = "Bad Conn."
     except:
+        temp2 = 'error'
         print("error")
-    return temp2, domain
+    return temp2
